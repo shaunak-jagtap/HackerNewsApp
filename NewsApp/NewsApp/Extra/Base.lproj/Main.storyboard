@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9zm-Rd-MM3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-yq-Szk">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YHx-lQ-klt">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dXe-lf-Hmf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Qfe-rV-6GK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hNE-yq-Szk" firstAttribute="top" secondItem="9zm-Rd-MM3" secondAttribute="bottom" id="1pl-9c-gSr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNE-yq-Szk" secondAttribute="trailing" id="5N5-Az-yUR"/>
+                            <constraint firstItem="9zm-Rd-MM3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Sm-gO-tnT"/>
+                            <constraint firstItem="9zm-Rd-MM3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8dy-fo-naj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YHx-lQ-klt" secondAttribute="bottom" id="FQb-Xx-3sE"/>
+                            <constraint firstItem="YHx-lQ-klt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NzF-7B-mWk"/>
+                            <constraint firstItem="hNE-yq-Szk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YCl-SK-TIW"/>
+                            <constraint firstItem="YHx-lQ-klt" firstAttribute="top" secondItem="9zm-Rd-MM3" secondAttribute="bottom" id="bfJ-YG-Lyc"/>
+                            <constraint firstItem="9zm-Rd-MM3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d9W-mb-sXu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YHx-lQ-klt" secondAttribute="trailing" id="pWY-a9-oUf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hNE-yq-Szk" secondAttribute="bottom" id="xMs-Y4-mvV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UH2-ou-yq9"/>
+                    <connections>
+                        <outlet property="searchBar" destination="9zm-Rd-MM3" id="6L3-Eu-24z"/>
+                        <outlet property="tableView" destination="YHx-lQ-klt" id="Lky-QV-crV"/>
+                        <outlet property="webView" destination="hNE-yq-Szk" id="6xh-M9-4dK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="135.9375"/>
+        </scene>
+    </scenes>
+</document>
